@@ -20,5 +20,5 @@ This repository contains the supplementary spreadsheet accompanying the paper
 All information was extracted manually from the cited papers.  
 The goal is to support transparency and future benchmarking efforts in text anonymization research.
 
-**Paper:** 
+**Paper:**  
 **Contact:** yren46@jhu.edu  

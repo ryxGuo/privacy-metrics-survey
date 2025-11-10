@@ -5,7 +5,7 @@ This repository contains the supplementary spreadsheet accompanying the paper
 
 ### Access the Data
 - **View online (HTML):**  
-- **Downloadable spreadsheet:**
+- **Downloadable spreadsheet:** 
 
 ### Columns
 - **Privacy Objective** – The high-level privacy goal targeted by the metric (e.g., Identifier Removal, Attribute Inference, Reconstruction, Semantic Inference, Membership, or Theoretical Bounds).  
@@ -20,5 +20,4 @@ This repository contains the supplementary spreadsheet accompanying the paper
 All information was extracted manually from the cited papers.  
 The goal is to support transparency and future benchmarking efforts in text anonymization research.
 
-**Paper:**  
 **Contact:** yren46@jhu.edu  

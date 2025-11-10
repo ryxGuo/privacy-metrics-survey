@@ -1,0 +1,1497 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 15">
+<link id=Main-File rel=Main-File href="../mapped_privacy_metrics.htm">
+<link rel=File-List href=filelist.xml>
+<link rel=Stylesheet href=stylesheet.css>
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+@page
+	{margin:.75in .7in .75in .7in;
+	mso-header-margin:.3in;
+	mso-footer-margin:.3in;}
+-->
+</style>
+<![if !supportTabStrip]><script language="JavaScript">
+<!--
+function fnUpdateTabs()
+ {
+  if (parent.window.g_iIEVer>=4) {
+   if (parent.document.readyState=="complete"
+    && parent.frames['frTabs'].document.readyState=="complete")
+   parent.fnSetActiveSheet(0);
+  else
+   window.setTimeout("fnUpdateTabs();",150);
+ }
+}
+
+if (window.name!="frSheet")
+ window.location.replace("../mapped_privacy_metrics.htm");
+else
+ fnUpdateTabs();
+//-->
+</script>
+<![endif]>
+</head>
+
+<body link="#467886" vlink="#96607D">
+
+<table border=0 cellpadding=0 cellspacing=0 width=7517 style='border-collapse:
+ collapse;table-layout:fixed;width:5638pt'>
+ <col width=197 span=2 style='mso-width-source:userset;mso-width-alt:6724;
+ width:148pt'>
+ <col width=920 style='mso-width-source:userset;mso-width-alt:31402;width:690pt'>
+ <col width=1203 style='mso-width-source:userset;mso-width-alt:41062;
+ width:902pt'>
+ <col width=1351 style='mso-width-source:userset;mso-width-alt:46114;
+ width:1013pt'>
+ <col width=1481 style='mso-width-source:userset;mso-width-alt:50551;
+ width:1111pt'>
+ <col width=1828 style='mso-width-source:userset;mso-width-alt:62395;
+ width:1371pt'>
+ <col width=68 span=5 style='width:51pt'>
+ <tr class=xl66 height=19 style='height:14.25pt'>
+  <td height=19 class=xl67 align=left width=197 style='height:14.25pt;
+  width:148pt'>Privacy Objective</td>
+  <td class=xl67 align=left width=197 style='width:148pt'>Paper</td>
+  <td class=xl67 align=left width=920 style='width:690pt'>Dataset</td>
+  <td class=xl67 align=left width=1203 style='width:902pt'>Anonymization
+  Methods</td>
+  <td class=xl67 align=left width=1351 style='width:1013pt'>Privacy Metrics</td>
+  <td class=xl67 align=left width=1481 style='width:1111pt'>Threat Model</td>
+  <td class=xl67 align=left width=1828 style='width:1371pt'>Metric Limitations</td>
+  <td class=xl66 width=68 style='width:51pt'></td>
+  <td class=xl66 width=68 style='width:51pt'></td>
+  <td class=xl66 width=68 style='width:51pt'></td>
+  <td class=xl66 width=68 style='width:51pt'></td>
+  <td class=xl66 width=68 style='width:51pt'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td rowspan=18 height=342 class=xl68 align=left width=197 style='height:256.5pt;
+  width:148pt'>Identifier Removal Effectiveness</td>
+  <td class=xl69 align=left width=197 style='width:148pt'><a
+  href="http://arxiv.org/abs/2504.21035" target="_parent">Xin et al. (2025)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>MedQA, WildChat</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Azure AI PII tool;
+  LLM-based anonymizer; Vanilla synthesis; DP synthesis</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>ROUGE-L lexical
+  distance (1 – ROUGE-L recall)</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Adversary has
+  access to three claims from the original record; linking via ROUGE-L to
+  identify sanitized record</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>ROUGE-L captures
+  only lexical overlap; fails to detect semantic leakage, which can lead to
+  false negatives for paraphrased but semantically equivalent content</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://doi.org/10.1016/j.compeleceng.2022.107985"
+  target="_parent">Moqurrab et al. (2022)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>Five Wikipedia
+  articles: Flu, Cancer, COVID, Diabetes, HIV</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Embedding-based
+  detection using Word2Vec and BERT</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Accuracy =
+  T_pr/T_cr * 100, where T_pr is the set of predicted semantically-correlated
+  (risky) terms and T_cr is the ground-truth annotations</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Assumes risk stems
+  from semantically correlated terms not explicitly listed as PII; adversary
+  could infer identity-relevant info from these terms</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Accuracy treats all
+  terms equally and may not reflect varying risk levels of different semantic
+  correlations; limited to manually annotated terms; performance varies by
+  article due to semantic ambiguity</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2021.acl-long.323/"
+  target="_parent">Lison et al. (2021)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>8 English Wikipedia
+  page extracts of biographies from the “20th century scientists” category</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Presidio,
+  C-sanitise, spaCy-based NER system</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Micro-averaged
+  Precision/Recall/F1; IOB&#8209;Exact, IOB&#8209;Partial, Binary tagging F1</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Adversary has
+  access to public knowledge and aims to prevent re-identification via
+  sensitive spans. Tools are evaluated based on how well they match the
+  gold-standard (annotator) masked spans</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Evaluation
+  sensitive to span boundaries and annotation conventions; IOB-partial uses
+  heuristic weights (0.5 for partial matches); precision and recall do not
+  reflect risk severity or contextual inferences</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2024.privatenlp-1.9/"
+  target="_parent">Alves et al. (2024)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>MIMIC-III</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Word2Vec
+  substitution, Doc2Vec substitution, Sentence-Transformer substitution</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>String
+  Matching-based Recall (SMR), Average Levenshtein Index of Dissimilarity
+  (ALID), Levenshtein Recall (LR), Levenshtein Recall for Direct Identifiers
+  (LRDI), Levenshtein Recall for Quasi-Identifiers (LRQI)</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Assumes adversary
+  can identify sensitive tokens via string or character-level similarity;
+  metrics evaluate if substituted tokens diverge from originals (e.g., via
+  Levenshtein distance). No reconstruction or classifier-based attack is
+  modeled.</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>SMR is strict
+  (exact string match) and may underestimate masking when substitutions are
+  close but non-identical. ALID and LR-based metrics are token-level and may
+  not capture contextual or semantic leakage. Sentence replacement may preserve
+  or reintroduce identifiers due to overlap in fake entity pool</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://doi.org/10.1109/TrustCom/BigDataSE.2019.00055"
+  target="_parent">Hassan et al. (2019)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>50 Wikipedia
+  abstracts sampled from a 19,000-document corpus of “20th century actors”
+  biographies</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Word-embedding–based
+  detection via cosine similarity; masking based on a similarity threshold</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Precision, Recall,
+  F1-score</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Adversary could
+  re-identify an entity (e.g. a person) from semantically related terms in the
+  document. The model flags sensitive phrases based on semantic proximity to
+  known identifiers (e.g., the person’s full name)</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Metrics consider
+  phrase-level exact containment of tagged spans; precision penalizes
+  over-masking, recall penalizes missed sensitive spans. Evaluation is
+  sensitive to manual annotation scope. Evaluation threshold (cosine similarity
+  &#8805; 0.25) was tuned to maximize F1, but is task-specific</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://doi.org/10.1007/978-3-031-13945-1_12"
+  target="_parent">Manzanares-Salor et al. (2022)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>50 manually
+  anonymized Wikipedia article abstracts from 19,000 articles on “20th century
+  actors”</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Stanford NER (NER3,
+  NER4, NER7), Microsoft Presidio, spaCy (en_core_web_lg), Word2Vec-based PPDP
+  method, Manual anonymization</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Recall, Precision</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Gold-standard
+  annotations (manual masking) are assumed accurate; anonymization
+  effectiveness is evaluated by comparing automatic methods to this reference
+  using IR-style true/false positive metrics</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>IR metrics assign
+  uniform weight to terms, ignore the impact of missed identifiers, assume a
+  single correct masking, and rely on subjective manual annotations which may
+  contain errors</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="http://arxiv.org/abs/2205.06895" target="_parent">Papadopoulou
+  et al. (2022)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>553 manually
+  annotated Wikipedia biographies; TAB (Text Anonymization Benchmark)</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>GreedyBERT,
+  RandomBERT; RoBERTa NER fine-tuned on OntoNotes v5; Longformer model
+  fine-tuned on TAB</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Entity-level
+  Precision/Recall/F1-score, Recall (direct identifiers), Recall
+  (quasi-identifiers)</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Assumes an
+  adversary has access to background knowledge represented as a knowledge graph
+  and can re-identify individuals from terms that break k-anonymity. Evaluation
+  checks how well masking aligns with sensitive terms annotated by humans</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Evaluation reflects
+  span-level agreement, not privacy risk directly. Precision and recall are
+  sensitive to boundary mismatches and disagreements among annotators. Masking
+  decisions that differ from the gold annotation may still prevent
+  re-identification but count as errors</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2020.acl-main.621/"
+  target="_parent">Lange et al. (2020)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>i2b2 2014
+  de-identification dataset</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>PIPELINE, STACKED,
+  and MULTITASK neural models; PHI tokens replaced by class-specific
+  placeholders based on BIO-tagged BiLSTM-CRF sequence labeling</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>De-identification
+  F1 score (exact match of predicted vs. gold PHI spans)</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Assumes a
+  span-level labeling threat: the adversary identifies privacy-sensitive tokens
+  (PHI) in raw clinical text; anonymization aims to remove these using exact
+  span matching</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Metrics depend on
+  exact PHI span matches and do not account for partial masking or semantic
+  leakage; placeholder replacement strategy may mask identifiers but retain
+  semantic information unless downstream access is restricted</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://doi.org/10.1007/s10618-024-01066-3"
+  target="_parent">Manzanares-Salor et al. (2024)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>50 Wikipedia
+  biographies manually anonymized to serve as gold standard; the full
+  background corpus includes 19,000 biographies</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Stanford NER (NER3,
+  NER4, NER7), Microsoft Presidio, spaCy en_core_web_lg, Word2Vec-based
+  masking, Manual anonymization</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Recall</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Assumes the goal is
+  to detect and remove manually annotated re-identifiable spans. Effectiveness
+  is measured by comparing predicted vs. gold-standard masked spans.</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Recall does not
+  account for false positives (over-masking); it also does not capture the
+  overall risk of re-identification or semantic leakage beyond missed spans</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2023.eacl-demo.22/"
+  target="_parent">Ribeiro et al. (2023)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>i2b2 (2006 &amp;
+  2014), MIMIC-III</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>CRF-based NER, spaCy
+  NER with Microsoft Presidio, K-Nearest Embeddings Obfuscation (KNEO)</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Precision, Recall,
+  F1-score (for CRF and spaCy NER only; not used for KNEO due to its full-token
+  replacement strategy)</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Assumes an
+  adversary can re-identify entities based on remaining PHI</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>F1-score not
+  meaningful for KNEO because it modifies all tokens. Metrics depend on span
+  matching and may underrepresent semantic leakage or over-masking</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="http://arxiv.org/abs/2406.03749" target="_parent">Huang
+  et al. (2024)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>PERSONA-CHAT</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Human-deleting and
+  obscuring rewrites; T5-BASE trained on NAP² (with/without GPT-4
+  augmentation); GPT-3.5, GPT-4, LLAMA, T5-ZeroShot, DPNR, DP-BART, DP-PROMPT,
+  FLAIR-SCRUBBING baselines</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>PRIVACY_NLI,
+  SPRIVACY</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Assumes attacker
+  has access to persona p and attempts to infer whether rewritten utterance x
+  reveals any information from p. Evaluated both via model entailment
+  (PRIVACY_NLI) and human judgement (SPRIVACY)</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>PRIVACY_NLI depends
+  on NLI model reliability and may misjudge subtle paraphrases. SPRIVACY relies
+  on crowd worker consistency, which is constrained by annotator quality and
+  subjectivity. Both metrics assume a fixed persona-to-utterance mapping</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2022.aacl-main.18/"
+  target="_parent">Papadopoulou et al. (2022)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>Text Anonymization
+  Benchmark (TAB)</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Privacy-enhanced
+  entity recognizer + masking strategies informed by risk scores from BERT-LM
+  surprisal, web-query URL overlap, and supervised classifier</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Token-level
+  precision, recall (direct &amp; quasi-identifiers), and F1-score (on all
+  identifiers)</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Assumes an
+  adversary can identify individuals based on direct and quasi-identifiers;
+  metric measures correctness of PII masking at the token level</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Relies on span
+  boundary matches with gold annotations; fails to capture semantic inferences
+  or partially correct masks. MISC category especially underperforms due to
+  ambiguity and inconsistent gold labels</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="http://doi.org/10.1016/j.comcom.2020.07.032"
+  target="_parent">Iwendi et al. (2020)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>i2b2-2010</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>N-Sanitization
+  framework combining dictionary-based term matching, regular expressions, and
+  Stanford NER (CRF-based) for PHI detection and substitution</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Precision, Recall,
+  F1-score</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Adversary attempts
+  re-identification using unmasked PHI in text; the evaluation task is binary
+  classification of terms as sensitive or not, based on gold PHI annotations</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Precision and
+  recall are computed at the token level; true effectiveness may vary with span
+  segmentation, ambiguity in PHI types, and unknown recall ceiling due to
+  hidden annotation standards</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2023.trustnlp-1.20/"
+  target="_parent">Yermilov et al. (2023)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>CNN/DM; IMDB;
+  CoNLL-2003</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>NER-PS(SPACY),
+  NER-PS(FLAIR), Seq2Seq-PS(SPACY), Seq2Seq-PS(FLAIR), LLM-PS<span
+  style='mso-spacerun:yes'> </span></td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>False Negative Rate
+  (FNR)</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>An adversary may
+  identify individuals based on leaked named entities</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Only evaluates
+  PERSON, ORG, and LOC types; does not account for other identifiers (e.g.,
+  dates, contact info); does not account for near-matches or semantic leakage.
+  FNR does not distinguish severity of leaked spans</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://doi.org/10.1162/coli_a_00458" target="_parent">Pilán
+  et al. (2022)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>Text Anonymization
+  Benchmark (TAB)</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>NER-based redaction,
+  PPDP-based masking, transformer-based fine-tuned sanitization models</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Entity-level recall
+  on direct identifiers ER_di; Entity-level recall on quasi-identifiers ER_qi</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Adversary may
+  re-identify individuals based on either direct identifiers or
+  quasi-identifiers that appear unmasked in any document mention.<span
+  style='mso-spacerun:yes'> </span></td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Entity-level recall
+  is strict: even one unmasked mention prevents an entity from being counted as
+  protected. This penalizes inconsistent masking and may underestimate
+  utility-preserving anonymization that partially masks successfully</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2024.acl-long.741/"
+  target="_parent">Dou et al. (2024)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>Reddit
+  Self-Disclosure Corpus, ShareGPT subset</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Self-disclosure span
+  detection via fine-tuned RoBERTa-large and DeBERTaV3-large sequence-tagging
+  models (plus LUKE and Presidio for rare PII types)</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Partial Span F1;
+  Span-level F1; Token-level F1</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Adversary is a
+  detector model trained to locate self-disclosure text that could expose user
+  identity.</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Authors report
+  moderate inter-annotator agreement (&#945; = 0.54) and note that the model
+  can be “over-sensitive,” highlighting content users did not consider risky;
+  performance drops for rare categories (name/contact)</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://arxiv.org/abs/2208.13081" target="_parent">Kleinberg
+  et al. (2022)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>British National
+  Corpus; Enron Emails; Wikipedia person pages</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>BERT-based PSI
+  detector (token classification) + rule-based, category-indexed replacements</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Token-level
+  precision/recall/F1 per category; macro and weighted averages on held-out
+  test set</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Technical detection
+  benchmark on gold-labeled PSI</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Lower F1 for
+  OCCUPATION/OTHER_IDENTIFYING_ATTRIBUTE and that category confusions may not
+  prevent removal but can break ideal placeholders</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2022.legal-1.12/"
+  target="_parent">Arranz et al. (2022)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>MAPA multilingual
+  NE-annotated corpora (24 EU languages); native French clinical cases;
+  machine-translated medical and legal corpora for all languages</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>MAPA
+  de-identification toolkit: Transformer-based NER (multilingual BERT) plus
+  regex detectors; replacement via neural LM, random-character, and dictionary
+  strategies</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Precision, Recall,
+  F1, F2 at word-level and entity-level; Test-style measures: Sensitivity and
+  Specificity</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Non-adversarial
+  detection benchmark on gold-labeled sensitive entities</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Emphasize
+  recall/sensitivity over precision (misses are costlier); F2 favored over F1;
+  translated data introduce MT noise and lower scores; macro averages may be
+  sub-optimal due to differing entity importance; results vary per
+  document/language</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td rowspan=8 height=152 class=xl68 align=left width=197 style='height:114.0pt;
+  width:148pt'>Dataset Membership</td>
+  <td class=xl69 align=left width=197 style='width:148pt'><a
+  href="https://ascopubs.org/doi/10.1200/CCI.23.00116" target="_parent">El
+  Kababji et al. (2023)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>8 breast cancer
+  clinical trials, including REaCT-G/G2, REaCT-HER2, REaCT-BTA, REaCT-ZOL,
+  REaCT-ILIAD, CCTG MA27, SWOG 0307, and NSABP B34</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Sequential synthesis
+  (SEQ), Generative Adversarial Networks (GAN), Variational Autoencoder (VAE)
+  synthetic data generation<span style='mso-spacerun:yes'>  </span></td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Membership
+  disclosure F1 score</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Adversary attempts
+  to determine whether a specific individual was part of the real clinical
+  trial dataset using only the synthetic dataset, assuming attacker samples
+  targets from the same population</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Membership risk
+  depends on both F1 score and the sampling fraction; a low F1 can still yield
+  high privacy risk if the real dataset covers a large proportion of the
+  population</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2023.trustnlp-1.14/"
+  target="_parent">Arnold et al. (2023)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>IMDb</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Synthetic text
+  generation via MADLIB and syntax-guided MADLIB</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Membership
+  Inference Attack (MIA) AUC</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Black-box attacker
+  trains an MIA classifier using shadow model outputs (logits) to infer whether
+  an instance was part of the privatized training set</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Attack AUC remains
+  close to random guessing; authors caution that results do not indicate a
+  privacy loss, but only provide approximate evidence of membership leakage
+  resistance, not a formal guarantee</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://doi.org/10.1145/3543507.3583512"
+  target="_parent">Du et al. (2023)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>IMDb and AG News</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Purkayastha
+  mechanism; Normalized Planar Laplace (PL) mechanism</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Membership-inference
+  attack success rate</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Black-box attacker
+  guesses whether a target example was in the training set using its
+  embedding’s predicted confidence or entropy from a classifier trained on
+  sanitized data</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Success rate varies
+  by privacy level; high level leads to leakage, but at low level, attacks
+  approach random guessing; metrics depend heavily on attacker's knowledge of
+  training distribution and classifier behavior</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2023.acl-long.74/"
+  target="_parent">Yue et al. (2023)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>Yelp Open Dataset,
+  Microsoft Internal Dataset</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>GPT-2 models trained
+  with and without DP-SGD, synthetic generation via top-k/nucleus sampling</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Canary Leakage
+  Rate, Canary Perplexity Rank</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Adversary generates
+  a large synthetic corpus and searches for verbatim canaries or low-perplexity
+  traces of training data</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Leakage varies
+  strongly by sampling strategy. Canary recovery only captures memorization,
+  not broader leakage. Rank-based metrics require model access and strong
+  assumptions about adversary capabilities</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2022.emnlp-main.185/"
+  target="_parent">Wang &amp; Sun (2022)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>MIMIC-III</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>PromptEHR: synthetic
+  EHR generation using BART-based language model with prompt learning</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Membership
+  Inference Attack AUC</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Adversary trains a
+  shadow model on synthetic data (D_S), mimics generation behavior, and then
+  builds a membership classifier distinguishing synthetic (D&#771;_S) vs.
+  held-out real (D_2) records</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Near-random AUC
+  suggests low leakage, but only under the evaluated shadow model and inference
+  classifier; cannot generalize to stronger or unseen adversaries</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/W19-1905/" target="_parent">Melamud
+  et al. (2019)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>MedText-2,
+  MedText-103 (derived from MIMIC-III discharge summaries)</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Synthetic clinical
+  notes generated by neural language models (LSTM with varying dropout rates)
+  and a unigram baseline</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Pointwise
+  Differential Training Privacy (PDTP), Sequential PDTP (S-PDTP), Expected
+  S-PDTP</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Attacker with
+  access to synthetic text and knowledge of the model architecture, seeks to
+  detect whether a specific clinical note was used in training, via model
+  output sensitivity</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Require retraining
+  the model with and without each target record — costly and only approximated
+  via sampling</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2024.findings-emnlp.894/"
+  target="_parent">Ramesh et al. (2024)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>MIMIC-III,
+  ChildProtectiveServices(CPS)</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Differentially
+  Private Text Generation</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Rank and
+  log-perplexity of canaries inserted into training data, Entity-Centric
+  Overlap</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Attacker generates
+  synthetic data and checks for reproduction of inserted or real PII; assumes
+  access to generated outputs (not weights), with knowledge of possible
+  sensitive formats (names, emails, etc.)</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Canary metrics
+  highly dependent on candidate space and format assumptions; results unstable
+  across different types of PII. Entity overlap doesn’t guarantee
+  identifiability or adversarial re-use</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://arxiv.org/abs/2502.14921" target="_parent">Yue
+  et al. (2023)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>SST-2, AG News, SNLI</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Synthetic text
+  generation via fine-tuned Mistral-7B</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Perplexity rank<font
+  class="font0"> on canary insertion, RMIA Score</font></td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Attacker knows the
+  original training dataset and the training procedure and prompt templates</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>High perplexity is
+  better for model MIAs but less likely to be regenerated in synthetic data</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td rowspan=9 height=190 class=xl68 align=left width=197 style='height:142.5pt;
+  width:148pt'>Attribute Inference Risk</td>
+  <td class=xl69 align=left width=197 style='width:148pt'><a
+  href="https://ascopubs.org/doi/10.1200/CCI.23.00116" target="_parent">El
+  Kababji et al. (2023)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>8 breast cancer
+  clinical trials, including REaCT-G/G2, REaCT-HER2, REaCT-BTA, REaCT-ZOL,
+  REaCT-ILIAD, CCTG MA27, SWOG 0307, and NSABP B34</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Sequential synthesis
+  (SEQ), Generative Adversarial Networks (GAN), Variational Autoencoder (VAE)
+  synthetic data generation<span style='mso-spacerun:yes'>  </span></td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Attribution
+  disclosure risk</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Attacker correctly
+  re-identifies an individual and uses the corresponding synthetic record to
+  infer additional private attributes</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Risk is only
+  meaningful when identity disclosure is also probable; attribution risk values
+  are conditioned on identity disclosure and require careful interpretation;
+  record similarity alone is not a valid proxy</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://doi.org/10.1145/3543507.3583512"
+  target="_parent">Du et al. (2023)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>IMDb and AG News</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Purkayastha
+  mechanism; Normalized Planar Laplace (PL) mechanism</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Sensitive-attribute
+  inference success rate</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Attacker attempts
+  to infer genre or topic label based on privatized sentence embeddings</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Accuracy is highly
+  sensitive to the privacy parameter&#8203;; even at moderate value&#8203;,
+  prediction accuracy can be significantly above chance depending on classifier
+  and task difficulty</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2022.emnlp-main.185/"
+  target="_parent">Wang &amp; Sun (2022)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>MIMIC-III</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>PromptEHR</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Attribute Inference
+  Attack Success Rate</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Adversary holds
+  partial real EHRs and prior probabilities, and uses synthetic data to train
+  an attribute imputation model; makes inferences when
+  logP^&#8722;logP_0&#8805;&#948;</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Attribute inference
+  success is sensitive to choice of &#948;</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="http://arxiv.org/abs/2405.01678" target="_parent">Meisenbacher
+  et al. (2024)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>GLUE (CoLA, SST2,
+  QQP, MRPC, STSB, MNLI, QNLI, WNLI, RTE), Friends Corpus, Trustpilot Reviews</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Truncated Geometric
+  mechanism 1-D_G, Truncated Exponential mechanism (TEM) 1-D_T</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Classification
+  accuracy in speaker ID and gender prediction tasks</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Supervised
+  adversary trained on original text (BERT) to infer speaker or gender</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Only evaluates
+  empirical privacy on two attributes</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://doi.org/10.1007/s11036-023-02096-9"
+  target="_parent">Wang et al. (2023)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>CMS Medical
+  Description Dataset</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Synthetic text
+  generated by DP-RVAE</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Average keyword
+  inference attack accuracy</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Attacker uses known
+  keyword list and a trained DANN classifier to infer presence of sensitive
+  terms in sentence embeddings</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Metric is limited
+  to a specific attack model (keyword inference with DANN) and embedding space
+  (DistillBERT); may not generalize to other types of attribute inference
+  tasks.</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=38 style='height:28.5pt'>
+  <td height=38 class=xl69 align=left width=197 style='height:28.5pt;
+  width:148pt'><a href="https://aclanthology.org/2024.findings-acl.554/"
+  target="_parent">Meisenbacher et al. (2024)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>Trustpilot Reviews</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>DP-MLM token-level
+  rewriting</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Privacy F1
+  (static/adaptive)</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Static attacker:
+  trains on real text to infer gender from privatized text.<br>
+    Adaptive attacker: trains on privatized text to infer gender
+  in-distribution.</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>F1 depends on class
+  distribution and classifier capacity. Limited to gender inference</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2025.cl-1.6/" target="_parent">Chim
+  et al. (2025)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>Reddit</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>STRAP, DE/CN
+  back-translation, SynSim/SynDiff/SynOrig/SynTr, StyMask, DP-BART variants,
+  LLaMA paraphrases</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Drop in attribute
+  classifier accuracy</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Attribute
+  classifier trained on original data is evaluated on privatized (synthetic)
+  data to infer attributes</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Attribute labels
+  are coarse; classifiers may have dataset biases</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="http://arxiv.org/abs/2405.19831" target="_parent">Meisenbacher
+  et al. (2024)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>Trustpilot Reviews</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>DP-BART, DP-Prompt,
+  with and without post-processing</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Static/adaptive-attacker
+  F1</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>DeBERTa-v3-base
+  binary gender classifier</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Focuses on gender
+  as the only sensitive attribute</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2024.emnlp-main.324/"
+  target="_parent">Meisenbacher &amp; Matthes (2024)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>Blog Authorship
+  Corpus</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>DP-PROMPT rewriting</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Gender F1
+  (static/adaptive)</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>DeBERTa-v3-base
+  classifier predicts gender and age bin</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Results vary across
+  DP strengths</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td rowspan=16 height=304 class=xl68 align=left width=197 style='height:228.0pt;
+  width:148pt'>Reconstruction Attacks</td>
+  <td class=xl69 align=left width=197 style='width:148pt'><a
+  href="http://arxiv.org/abs/2504.21035" target="_parent">Xin et al. (2025)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>MedQA, WildChat</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Azure AI PII tool;
+  LLM-based anonymizer; Vanilla synthesis; DP synthesis</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>BM25 correct
+  linkage rate</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Adversary receives
+  auxiliary claims (three per individual), uses sparse retrieval (BM25) to
+  identify matching record</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>High variability
+  depending on which claims are exposed; not applicable to dataset-level
+  synthesis methods due to lack of one-to-one record mapping</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://doi.org/10.1007/978-3-031-13945-1_12"
+  target="_parent">Manzanares-Salor et al. (2022)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>50 manually
+  anonymized Wikipedia article abstracts from 19,000 articles on “20th century
+  actors”</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Stanford NER (NER3,
+  NER4, NER7), Microsoft Presidio, spaCy (en_core_web_lg), Word2Vec-based PPDP
+  method, Manual anonymization</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Re-identification
+  Accuracy</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Adversary has
+  access to a background corpus (BD) with known identities and tries to re-link
+  anonymized documents (AD) to individuals using a DistilBERT classifier
+  trained on BD and its anonymized copy BD&#8242;</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Accuracy varies
+  with overlap between background and protected identities. Attack simulates
+  realistic, resource-constrained adversary, but relies on classifier
+  assumptions. Even manual anonymization yields high risk under this setup,
+  highlighting limitations of annotation-based evaluation</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://doi.org/10.1007/s10618-024-01066-3"
+  target="_parent">Manzanares-Salor et al. (2024)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>50 Wikipedia
+  biographies manually anonymized to serve as gold standard; the full
+  background corpus includes 19,000 biographies</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Stanford NER (NER3,
+  NER4, NER7), Microsoft Presidio, spaCy en_core_web_lg, Word2Vec-based
+  masking, Manual anonymization</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Text
+  Re-Identification Risk (TRIR)</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Adversary is
+  simulated via a classifier (TRIA) trained to match protected documents (AI)
+  to background individuals (BD), representing realistic linkage attempts based
+  on retained content</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>TRIR reflects only
+  the success of a particular ML-based attacker (TRIA); results may vary with
+  adversary capabilities or corpus overlap; high TRIR observed even for manual
+  anonymization suggests limits of masking-only defenses</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2022.aacl-main.18/"
+  target="_parent">Papadopoulou et al. (2022)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>Text Anonymization
+  Benchmark (TAB)</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Privacy-enhanced
+  entity recognizer + masking strategies informed by risk scores from BERT-LM
+  surprisal, web-query URL overlap, and supervised classifier</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>BERT-based privacy
+  risk, Web-query risk, Supervised risk</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Adversary attempts
+  re-identification by exploiting entities or their combinations via language
+  modeling, web search co-occurrence, or prior classification patterns.</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>LM-based scores
+  sensitive to token frequency and span length. Web-query metric depends on
+  dated or variable search engine results. Classifier-based scores require
+  training data and may overfit to labeled masking choices</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2025.cl-1.6/" target="_parent">Chim
+  et al. (2025)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>Reddit</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>STRAP,
+  SynSim/SynDiff, StyMask, DP-BART variants, LLaMA paraphrases</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Re-identification
+  success rate</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Adversary compares
+  synthetic timelines to full user pool to match to the most similar true
+  author posts</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Assumes access to
+  all original timelines; performance varies with timeline length and topic
+  diversity</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2023.findings-acl.355/"
+  target="_parent">Chen et al. (2023)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>SST-2, QNLI, MedSTS</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>FBDD, SANTEXT,
+  SANTEXT+, CusText, CusText+</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Mask Token
+  Inference Attack Success Rate, Query Count N</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Semi-honest
+  adversary with access to sanitized texts and public model; attacker uses
+  masked token prediction and repeated sampling to infer original tokens</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>BERT may have
+  biases; assumes attacker knows sanitized outputs only</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2021.findings-acl.337/"
+  target="_parent">Yue et al. (2021)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>SST-2, QNLI, MedSTS</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>SANTEXT, SANTEXT+</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Defense rate of
+  mask token inference attack</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Attacker replaces
+  each token with [MASK] and uses pretrained BERT to infer original</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>token-level attack
+  may not capture higher-order semantic recovery</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2023.eacl-srw.11/"
+  target="_parent">Ben Cheikh Larbi et al. (2023)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>MIMIC-III</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>De-identification
+  (Philter); Mask Numbers; Shuffle Sentences; Random Swap; Synonym Replacement;
+  Clinical Concept Synonym Replacement; Aggregation</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Found rate, a/o
+  sim, avg-sim</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Attacker computes
+  word-level Jaccard similarity between anonymized texts and full corpus of
+  original documents to find the true source</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Only evaluates
+  exact top-1 re-identification; Jaccard similarity does not capture
+  paraphrasing or semantic structure</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2024.bionlp-1.2/"
+  target="_parent">Zecevic et al. (2024)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>93,162 real endoscopy
+  reports from St Thomas’ Hospital</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>BioGPT fine-tuned
+  with and without DP-SGD</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Max ROUGE-L per
+  synthetic report</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Attacker computes
+  ROUGE-L similarity of synthetic reports against full training corpus to find
+  verbatim or near-verbatim matches</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>ROUGE-L only
+  captures surface-level lexical overlap and LCS structure</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="http://arxiv.org/abs/2410.17052" target="_parent">Tong
+  et al. (2025)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>SST-2, QNLI, AGNEWS,
+  Yelp</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>CUSTEXT+, SANTEXT+
+  (DP mechanisms)</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Context-free ASR
+  Bound, Contextual K-ASR Bound, ASR of Context-free Bayesian Attack, ASR of
+  Contextual Bayesian Attack, ASR of Embedding Inversion Attack, ASR of
+  Inversion BERT Attack, ASR of Mask Token Inference Attack</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Both upper-bound
+  and practical adversaries simulated; context-aware models assume access to
+  sanitized context and model internals</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>All ASRs operate at
+  token level only; results vary across tasks and domains</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="http://arxiv.org/abs/2412.12928" target="_parent">Pilan
+  et al. (2024)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>Text Anonymization
+  Benchmark (TAB)</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>INTACT; Suppression;
+  Entity-type replacement; Presidio’s synthetic replacement; Dou et al.’s
+  replacements; Least-specific and Most-specific single-step replacements.<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Text
+  Re-identification Risk (TRIR)</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Adversary trains a
+  re-identification model on a split of the TAB dataset to link anonymized
+  biographies back to authors</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Classifier uses
+  document-level features and assumes author set is known; limited to one
+  document per individual</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2022.findings-emnlp.352/"
+  target="_parent">Morris et al. (2022)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>Wikibio (Wikipedia
+  Biographies)</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Lexical redaction;
+  Named&#8208;Entity redaction; IDF&#8208;based masking; and NN DeID</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Ensemble
+  Reidentification Rate</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Adversarial linking
+  to profiles using an ensemble of reidentification models: Dual-encoder neural
+  models and IR-based BM25 model</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Evaluation requires
+  access to a large profile set aligned with documents;<span
+  style='mso-spacerun:yes'> </span></td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2024.lrec-main.16/"
+  target="_parent">Meisenbacher et al. (2024)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>IMDb, AG News</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>SynTF, Calibrated
+  Multivariate Perturbations (CMP), Mahalanobis Mechanism, SanText, Truncated
+  Gumbel Mechanism, Vickrey Mechanism, and Truncated Exponential Mechanism
+  (TEM)</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Least-Occurring
+  Words (LOW)</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Lexical uniqueness:
+  rare words are treated as quasi-identifiers; presence in output could
+  facilitate reidentification or linkage attacks</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Authors explicitly
+  caution that LOW shows high variance across runs and lacks interpretability;
+  further validation of its relevance is needed</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2024.findings-acl.669/"
+  target="_parent">Casula et al. (2024)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>Multi-Domain
+  Agreement (MDA); Measuring Hate Speech (MHS)</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Synthetic rewriting
+  using Llama-2 Chat 7B prompted as paraphrase or informal style transfer,
+  followed by Levenshtein&#8208;based filtering (TheFuzz) and
+  label&#8208;consistency filtering with a RoBERTa classifier</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Manual
+  re-identification success rate</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Human adversary
+  with access to synthetic text and a web search engine attempts to link the
+  synthetic sample to its source post</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Manual inspection
+  limited to 100 synthetic examples from MDA, not automated or scalable</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://dl.acm.org/doi/10.1145/3459637.3482281"
+  target="_parent">Qu et al. (2021)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>SST-2, QQP</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>d&#967;-privacy with
+  (i) token-representation privatization via additive noise M_rep, (ii)
+  text-to-text privatization via nearest-neighbor post-processing M_txt.</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Token Embedding
+  Inversion Accuracy</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Local privacy:
+  users privatize tokens/embeddings client-side; attacker tries to invert
+  perturbed representations via nearest-neighbor search.</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>This attack is not
+  comprehensive; used mainly to gauge privacy–utility trade-offs and guide
+  &#951; selection; stronger ML attacks left to future work.</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr class=xl65 height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://arxiv.org/abs/2208.13081" target="_parent">Kleinberg
+  et al. (2022)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>Crowd-sourced
+  person-description corpora</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Textwash end-to-end</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Human
+  de-anonymisation rate (%) using string-match cosine similarity between
+  intruder guess and true name</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>“Motivated
+  intruder” (human) with access to public knowledge</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Famous-person
+  setting is a lower-bound stress test relying on public, highly specific
+  details; rates vary widely by item; question of “how good is good enough”
+  remains</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td rowspan=8 height=171 class=xl68 align=left width=197 style='height:128.25pt;
+  width:148pt'>Semantic Inference Risk</td>
+  <td class=xl69 align=left width=197 style='width:148pt'><a
+  href="http://arxiv.org/abs/2504.21035" target="_parent">Xin et al. (2025)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>MedQA, WildChat</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Azure AI PII tool;
+  LLM-based anonymizer; Vanilla synthesis; DP synthesis</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Prompt-based
+  semantic matching score <font class="font8">&#956;_semantic</font></td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Adversary uses
+  sparse retriever to link sanitized record and then queries a language model
+  to semantically evaluate leakage of atomic claims not used in linking</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Relies on LLM
+  judgment, which, though strongly correlated with human annotations, still
+  reflects model biases and prompt sensitivity; high scores do not guarantee
+  privacy, only reduced similarity</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2020.acl-main.621/"
+  target="_parent">Lange et al. (2020)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>i2b2 2014
+  de-identification dataset</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>PIPELINE, STACKED,
+  and MULTITASK neural models; PHI tokens replaced by class-specific
+  placeholders based on BIO-tagged BiLSTM-CRF sequence labeling</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Clinical Concept
+  Extraction F1 score</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Evaluates whether a
+  model trained on anonymized text can still extract sensitive semantic
+  content, implying potential privacy leakage beyond token-level identifiers</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Scores depend on
+  alignment of concept spans and labels; models may still infer sensitive
+  health conditions from anonymized text, and the metric does not capture
+  partial or indirect leakage</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2023.eacl-demo.22/"
+  target="_parent">Ribeiro et al. (2023)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>i2b2 (2006 &amp;
+  2014), MIMIC-III</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>CRF-based NER, spaCy
+  NER with Microsoft Presidio, K-Nearest Embeddings Obfuscation (KNEO)</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Information Loss
+  (IL)</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Assumes adversary
+  infers semantic content from the anonymized note using a BioBERT-based ICD-10
+  classifier. Greater divergence in predicted codes implies greater information
+  loss, hence better protection.</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>IL is
+  classifier-dependent and may not reflect all semantic leakage pathways. High
+  IL for KNEO reflects loss of structure and interpretability; low IL could
+  still carry privacy risk through indirect inferences</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2023.acl-long.74/"
+  target="_parent">Yue et al. (2023)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>Yelp Open Dataset,
+  Microsoft Internal Dataset</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>GPT-2 models trained
+  with and without DP-SGD, training sets are injected with paraphrased “subject
+  of interest” at frequencies of 100, 1,000, and 10,000</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Subject Generation
+  Rate</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Adversary attempts
+  to detect presence of semantically meaningful injected content in generated
+  samples</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Leakage detection
+  depends on matching to paraphrases, which may be fuzzy. Results suggest that
+  DP reduces but does not eliminate semantic memorization</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=38 style='height:28.5pt'>
+  <td height=38 class=xl69 align=left width=197 style='height:28.5pt;
+  width:148pt'><a href="https://aclanthology.org/2024.lrec-main.16/"
+  target="_parent">Meisenbacher et al. (2024)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>IMDb, AG News</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>SynTF, Calibrated
+  Multivariate Perturbations (CMP), Mahalanobis Mechanism, SanText, Truncated
+  Gumbel Mechanism, Vickrey Mechanism, and Truncated Exponential Mechanism
+  (TEM)</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Perturbation
+  Percentage (PP)</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Leakage of semantic
+  meaning from preserved tokens; low PP may imply high semantic similarity and
+  thus potential leakage</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>PP is insensitive
+  to meaning-preserving substitutions or grammatical coherence<br>
+    </td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2023.findings-acl.874/"
+  target="_parent">Igamberdiev et al. (2023)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>ATIS, Snips, IMDb,
+  Drugs.com, Amazon Reviews</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>ADePT, DP-BART-CLV,
+  DP-BART-PR, DP-BART-PR+</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>BLEU Score,
+  Downstream Test Macro-F1</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Passive inference
+  adversary attempting to recover semantic information from privatized text</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>No direct attacker
+  modeling or empirical privacy breach analysis</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2024.privatenlp-1.9/"
+  target="_parent">Alves et al. (2024)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>MIMIC-III clinical
+  notes</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Word2Vec
+  substitution, Doc2Vec substitution, Sentence-Transformer substitution</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Jaccard Similarity
+  Coefficient (JSC), Normalized Softmax Discounted Cumulative Gain (NSDCG) on
+  predicted ICD-10 codes before and after sanitization</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Adversary infers
+  sensitive clinical conditions from anonymized notes using a classifier
+  (BioBERT) trained to predict ICD-10 codes</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Metrics assume that
+  semantic leakage is captured by stability in predicted labels; influenced by
+  classifier performance and training-data overlap; high JSC/NSDCG may reflect
+  under-sanitization or strong topic retention rather than genuine privacy
+  risk.</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2024.acl-long.741/"
+  target="_parent">Dou et al. (2024)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>Reddit
+  Self-Disclosure Corpus</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Self-Disclosure
+  Abstraction models (fine-tuned Llama-2-7B LoRA); generate three less-specific
+  abstractions per span (end-to-end and iterative training)</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Automatic BLEU,
+  ROUGE-2/L, Diversity (# unique bigrams); Human evaluation on Privacy Increase
+  (1–5), Utility Preservation (1–5), Diversity (1–5), and Coherence ( %)</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Adversary is a
+  reader inferring personal details from unabstracted spans</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Human evaluation is
+  subjective; privacy increase is moderate only</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td rowspan=16 height=304 class=xl68 align=left width=197 style='height:228.0pt;
+  width:148pt'>Theoretical Privacy Bounds</td>
+  <td class=xl69 align=left width=197 style='width:148pt'><a
+  href="https://aclanthology.org/2023.trustnlp-1.14/" target="_parent">Arnold
+  et al. (2023)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>Not dataset-specific</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Synthetic text
+  generation via MADLIB and syntax-guided MADLIB</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Empirical
+  self-substitution probability N_w; Support size S_w</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Adversary infers
+  information about the mechanism based on distributional characteristics like
+  repeat substitution or narrow support; plausible deniability is used as an
+  informal privacy proxy</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>These are <font
+  class="font7">proxies</font><font class="font0">; authors note that
+  they&#8203; are distributional indicators of plausible deniability, but are
+  not formally tied to standard differential privacy guarantees</font></td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://doi.org/10.1145/3543507.3583512"
+  target="_parent">Du et al. (2023)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>IMDb and AG News</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>For embeddings:
+  Purkayastha mechanism; Normalized Planar Laplace (PL) mechanism; for labels:
+  randomized response over discrete label space</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Embedding&#8208;sanitization
+  privacy budget &#949;_1; Label&#8208;sanitization privacy budget &#949;_2</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Formal LDP
+  guarantee constrains adversary’s ability to distinguish between any two
+  inputs (sentences or labels) from a single observation</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>&#949;_1 bounds
+  apply only to embedding release, not the classifier; &#949;_2 -LDP assumes
+  label space is small and pruned, which may limit real-world applicability</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2023.acl-long.74/"
+  target="_parent">Yue et al. (2023)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>Yelp Open Dataset,
+  Microsoft Internal Dataset</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Differentially
+  Private Stochastic Gradient Descent (DP-SGD) via Opacus; privacy budget
+  &#949; is controlled by noise scale &#963;, clipping norm, and training steps</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Privacy Budget
+  &#949; (with &#948;=10^{-5})</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Formal
+  (&#949;,&#948;)-DP guarantees restrict adversary’s ability to detect whether
+  a single example was used in training</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Large &#949; values
+  may not guarantee practical protection; &#949; values are global and do not
+  differentiate between memorized vs. semantically generalized leakage</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="http://arxiv.org/abs/2405.01678" target="_parent">Meisenbacher
+  et al. (2024)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>Not dataset-specific</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Truncated Geometric
+  mechanism 1-D_G, Truncated Exponential mechanism (TEM) 1-D_T</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>(&#949;,
+  dX)-privacy gaurantee, probability of identity retention N_w, support size
+  S_w</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>No specific
+  attacker</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>&#949; is not
+  directly comparable across mechanisms due to different metrics</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://doi.org/10.1007/s11036-023-02096-9"
+  target="_parent">Wang et al. (2023)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>Not dataset-specific</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>DP-RVAE trained with
+  DP-SGD</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>(&#949;,
+  &#948;)-Differential Privacy via RDP accounting for encoder</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>No specific
+  attacker</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>&#949; and &#948;
+  depend on batch size, noise scale, and dropout rate; RDP assumptions may not
+  reflect real-world adversarial behaviors; privacy guarantees hold under
+  strict composition assumptions</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2024.findings-acl.554/"
+  target="_parent">Meisenbacher et al. (2024)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>Not dataset-specific</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>DP-MLM token-level
+  rewriting</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Privacy Budget
+  &#949;; by sequential composition, n-token output satisfies n·&#949;-DP</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>No specific
+  attacker</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Sequential
+  composition leads to linearly growing &#949; with sentence length</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2023.findings-acl.355/"
+  target="_parent">Chen et al. (2023)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>SST-2, QNLI, MedSTS</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>CusText, CusText+</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>&#949;-DP</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Formal adversary
+  with unlimited computation power</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Token-level DP may
+  not protect higher-level semantics</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2021.findings-acl.337/"
+  target="_parent">Yue et al. (2021)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>SST-2, QNLI, MedSTS</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>SANTEXT</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Token&#8208;retain
+  probability N_x, support size S_x</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>No specific
+  attacker</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>N_x&#8203; depends
+  on sampling procedure; S_x&#8203; requires approximating cumulative mass,
+  which is sensitive to threshold and sampling noise</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2024.bionlp-1.2/"
+  target="_parent">Zecevic et al. (2024)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>93,162 real endoscopy
+  reports from St Thomas’ Hospital</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>BioGPT fine-tuned
+  with DP-SGD</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>&#949;-DP with
+  &#948;=1/(N log&#8289; N)</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Attacker is
+  computationally unbounded</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Epsilon fixed to 4;
+  no ablation across &#949; values</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2024.lrec-main.16/"
+  target="_parent">Meisenbacher et al. (2024)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>IMDb, AG News</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>SynTF, Calibrated
+  Multivariate Perturbations (CMP), Mahalanobis Mechanism, SanText, Truncated
+  Gumbel Mechanism, Vickrey Mechanism, and Truncated Exponential Mechanism
+  (TEM)</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Privacy Budget
+  &#949;, probability of retaining a word N_w, support size S_w</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Formal worst-case
+  attacker accessing outputs of the randomized mechanism</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>&#949; values not
+  directly comparable across mechanisms due to varying sensitivity and
+  embedding space behavior; N_w and S_w are empirical estimates from repeated
+  sampling, not guaranteed to reflect real-world effectiveness</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2023.findings-acl.874/"
+  target="_parent">Igamberdiev et al. (2023)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>ATIS, Snips, IMDb,
+  Drugs.com, Amazon Reviews</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>ADePT, DP-BART-CLV,
+  DP-BART-PR, DP-BART-PR+</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>(&#949;,&#948;)-Differential
+  Privacy</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Local DP setting:
+  each user's data is privatized before release; attacker cannot observe
+  unmodified input</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Assumes correct
+  sensitivity estimates and that BART sampling approximates post-processing
+  invariance</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2021.naacl-main.314/"
+  target="_parent">Bo et al. (2021)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>Yelp Review Dataset,
+  NeurIPS 2013–2018 and ICLR 2017 public reviews</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Embedding Reward
+  Autoencoder (ER-AE)</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Text-level privacy
+  budget &#949;</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Local DP setting:
+  attacker has access only to generated text, not to the original or the model
+  internals</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>&#949; depends
+  linearly on sequence length l, limiting applicability to longer texts</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://www.ijcai.org/proceedings/2024/735"
+  target="_parent">Zhao et al. (2024)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>AG News, Disaster
+  Tweets, TREC</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Iterative DP
+  synthetic&#8208;text generation<span style='mso-spacerun:yes'> </span></td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Total privacy
+  budget &#949;&#8242;</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Worst-case attacker
+  attempting to infer membership or semantic content from synthetic text</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>&#949;' depends on
+  number of iterations T, making strong privacy and high text quality difficult
+  to achieve simultaneously</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="http://arxiv.org/abs/2008.03101" target="_parent">Adelani
+  et al. (2022)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>VERBMOBIL, ATIS,
+  SNIPS, FB en-TOD, MS Restaurant, MS Taxi</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Probabilistic text
+  de-identification</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Differential
+  privacy parameter (&#949;,0)</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Adversary has
+  access only to the output (transformed text), not the transformation
+  parameters</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Guarantee assumes
+  uniform or known replacement distribution &#960;(t), and independence from
+  original token</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://aclanthology.org/2025.naacl-long.532/"
+  target="_parent">Ochs et al. (2025)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>SPAM dataset, Reddit
+  SuicideWatch and Mental Health Collection, &quot;ThumbsUp&quot;dataset,<span
+  style='mso-spacerun:yes'>   </span>drug reviews from WebMD</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>DiffuSeq,
+  SeqDiffuSeq, and GENIE</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Differential
+  privacy parameter (&#949;,&#948;)</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>White-box setting:
+  attacker can observe generated text and potentially the model outputs</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>Theoretical bounds
+  assume correct implementation of DP-SGD and appropriate accounting of total
+  training steps</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl69 align=left width=197 style='height:14.25pt;
+  width:148pt'><a href="https://dl.acm.org/doi/10.1145/3459637.3482281"
+  target="_parent">Qu et al. (2021)</a></td>
+  <td class=xl70 align=left width=920 style='width:690pt'>SST-2, QQP</td>
+  <td class=xl70 align=left width=1203 style='width:902pt'>Token representation
+  privatization (d&#967;-privacy noise on embeddings); Text-to-text
+  privatization (perturbation + NN mapping)</td>
+  <td class=xl70 align=left width=1351 style='width:1013pt'>Plausible
+  Deniability Statistics: N_w and S_w</td>
+  <td class=xl70 align=left width=1481 style='width:1111pt'>Local settinG: each
+  user privatizes tokens before sending; service sees only perturbed tokens</td>
+  <td class=xl70 align=left width=1828 style='width:1371pt'>The semantics of
+  &#951; depend on the chosen distance ddd and must be calibrated for the task;
+  sequence- vs token-level &#951; have different privacy semantics; high
+  embedding dimensionality forces large &#951;, suggesting dimensionality
+  reduction as future work.</td>
+  <td colspan=5 style='mso-ignore:colspan'></td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=197 style='width:148pt'></td>
+  <td width=197 style='width:148pt'></td>
+  <td width=920 style='width:690pt'></td>
+  <td width=1203 style='width:902pt'></td>
+  <td width=1351 style='width:1013pt'></td>
+  <td width=1481 style='width:1111pt'></td>
+  <td width=1828 style='width:1371pt'></td>
+  <td width=68 style='width:51pt'></td>
+  <td width=68 style='width:51pt'></td>
+  <td width=68 style='width:51pt'></td>
+  <td width=68 style='width:51pt'></td>
+  <td width=68 style='width:51pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</body>
+
+</html>
